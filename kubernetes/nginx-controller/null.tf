@@ -1,6 +1,6 @@
 resource "null_resource" "get_nlb_hostname" {
     provisioner "local-exec" {
-        command = "aws eks update-kubeconfig --name hr-dev-eks-demo --region us-east-1 && kubectl get svc load-nginx  --namespace nginx-ingress -o jsonpath='{.status.loadBalancer.ingress[*].hostname}' > ${path.module}/lb_hostname.txt"
+        command = "aws eks update-kubeconfig --name hr-dev-eks-demo --region eu-west-2 && kubectl get svc load-nginx  --namespace nginx-ingress -o jsonpath='{.status.loadBalancer.ingress[*].hostname}' > ${path.module}/lb_hostname.txt"
     }
     depends_on = [
       helm_release.ingress_nginx
@@ -24,8 +24,9 @@ resource "aws_route53_zone" "hosted_zone" {
 locals {
   instances = {
     namea = "sock-shop.${var.domain_name}"
-    nameb = "grafana.${var.domain_name}"
-   
+    nameb = "voting-app.${var.domain_name}"
+    named = "grafana.${var.domain_name}"
+    namee = "result.${var.domain_name}"
   }
 }
 

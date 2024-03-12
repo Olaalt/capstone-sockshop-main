@@ -1,3 +1,3 @@
-aws_region        = "us-east-1"
+aws_region        = "eu-west-2"
 environment       = "dev"
 business_division = "hr"
