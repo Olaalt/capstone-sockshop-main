@@ -12,7 +12,7 @@ resource "kubernetes_ingress_v1" "micro-ingress" {
 
   spec {
     rule {
-      host = "sock-shop.manifestationcloudservice.com.ng"
+      host = "sock-shop.clouditdirect.online"
       http {
         path {
           backend {

@@ -12,7 +12,7 @@ resource "kubernetes_ingress_v1" "prome-ingress" {
 
   spec {
     rule {
-      host = "grafana.manifestationcloudservice.com.ng"
+      host = "grafana.clouditdirect.online"
       http {
         path {
           backend {
